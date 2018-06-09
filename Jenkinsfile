@@ -5,7 +5,6 @@ pipeline {
       agent any
       steps {
         sh 'cd /data && git clone https://github.com/sohutv/cachecloud.git'
-        sh 'mvn clean compile install -Plocal'
       }
     }
     stage('ConfigFile') {
