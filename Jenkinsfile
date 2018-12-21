@@ -4,13 +4,13 @@ pipeline {
     stage('gitCode') {
       agent any
       steps {
-        sh 'cd /data && git clone https://github.com/sohutv/cachecloud.git'
+        sh 'cd /data/cachecloud-master'
         sh 'mvn clean compile install -Plocal'
       }
     }
     stage('ConfigFile') {
       steps {
-        sh 'cp /data/cachecloudBak/cachecloud/cachecloud-open-web/src/main/swap/online.properties /data/cachecloud/cachecloud/cachecloud-open-web/src/main/swap/online.properties'
+        sh 'echo "cp config file to profile local"'
       }
     }
     stage('Build') {
