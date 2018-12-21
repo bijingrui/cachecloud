@@ -5,7 +5,6 @@ pipeline {
       agent any
       steps {
         sh 'cd /data/cachecloud-master'
-        sh 'mvn clean compile install -Plocal'
       }
     }
     stage('ConfigFile') {
